@@ -1,9 +1,13 @@
 import React from 'react'
+import { Grommet } from 'grommet';
+import HomePage from './views/HomePage'
 
 function App() {
   return (
     <div>
-      <h1>Me parece que esto empieza mañana...</h1>
+      <Grommet plain>
+        <HomePage />
+      </Grommet>      
     </div>
   );
 }
