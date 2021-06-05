@@ -7,10 +7,6 @@ import navBarLogo from '../assets/navBarLogo.png'
 
 
 const NavBar = () => {
-    const [respMenu, setRespMenu] = useState(false)
-    const handleRespMenu = () => {
-        setRespMenu(!respMenu)
-    }
     const [click, setClick] = useState(false);
     const handleClick = () => {
         return(
