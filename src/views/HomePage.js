@@ -1,7 +1,7 @@
 import React from 'react' 
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import NavBar from '../components/NavBar'
-import Header from '../components/Header'
+import Cover from '../components/Cover'
 import About from '../components/About'
 import HowItWorks from '../components/HowItWorks'
 import Footer from '../components/Footer'
@@ -13,7 +13,7 @@ const HomePage = () => {
         
             <Router>
               <NavBar />
-              <Header />
+              <Cover />
               <About />
               <HowItWorks />
               <Footer />            
