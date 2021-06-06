@@ -1,13 +1,13 @@
 import React from 'react' 
 import { Twitter, Instagram, FacebookOption } from 'grommet-icons'
-import {Box} from 'grommet'
+import {Box, Anchor} from 'grommet'
 
 const SocialMedia = () => {
     return(
-        <Box direction='row' justify='evenly' gap='medium'>
-            <Twitter href='https://twitter.com' color='secondArt' size='medium' />
-            <Instagram href='https://www.instagram.com' color='secondArt' size='medium' />
-            <FacebookOption href='https://www.facebook.com/' color='secondArt' size='medium' />
+        <Box direction='row' justify='evenly' gap='medium' >
+            <Anchor focusIndicator={false} target='_blank' href='https://twitter.com'  label={<Twitter size='medium' color='secondArt'/>} />
+            <Anchor focusIndicator={false} target='_blank' href='https://www.instagram.com'  label={<Instagram size='medium' color='secondArt'/>} />
+            <Anchor focusIndicator={false} target='_blank' href='https://www.facebook.com/'  label={<FacebookOption size='medium' color='secondArt'/>} />
         </Box>
         
     )
