@@ -27,7 +27,7 @@ const NavBar = () => {
                 background='primary'
                 pad={{left:'medium', right:'small'}}
                 elevation='medium'
-                style={{zIndex:'1'}}
+                style={{position:'sticky', top:'0',zIndex:'1'}}
             >
                 <NavLink exact to='../views/HomePage.js'>
                     <img src={navBarLogo} width='30rem'  alt='Navbar logo'/>
