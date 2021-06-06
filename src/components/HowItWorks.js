@@ -25,14 +25,14 @@ const HowItWorks = () => {
                 <Heading alignSelf='center'  size='small' style={{fontFamily: 'Spectral', textDecoration:'underline'}} >How It Works</Heading>   
                 <Tabs margin='medium' >
                     <Tab title="I'm an artist" margin='none'>
-                        <Box pad="medium" width='large'height='medium'>
+                        <Box pad="medium" width='large'>
                             <img alt='diagram about how it works the app' src={DiagramHIW2} />
                             
                             <Button size='large' margin='medium' alignSelf='center' primary label="Join" />                                                          
                         </Box>
                     </Tab>
                     <Tab title="I have a restaurant">
-                        <Box pad="medium" width='large' height='medium'>
+                        <Box pad="medium" width='large'>
                             <img alt='diagram about how it works the app' src={DiagramHIW} />
                             <Button size='large' margin='medium' alignSelf='center' primary label="Join" />   
                         </Box>
