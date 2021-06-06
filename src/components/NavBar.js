@@ -30,7 +30,11 @@ const NavBar = () => {
                 style={{position:'sticky', top:'0',zIndex:'1'}}
             >
                 <NavLink exact to='../views/HomePage.js'>
-                    <img src={navBarLogo} width='30rem'  alt='Navbar logo'/>
+                    <img 
+                        src={navBarLogo} 
+                        width='30rem' 
+                        style={{marginTop:'.5rem'}}
+                        alt='Navbar logo'/>
                 </NavLink>
                 
                 {(size === 'medium' || size === 'large') ? (
@@ -41,7 +45,7 @@ const NavBar = () => {
                             <CustomLink to='../views/SignUp.js' onClick={handleClick}>Sign Up</CustomLink>
                         </Nav> 
                                    
-                ):( <Menu
+                ):( <Menu focusIndicator={false}
                     items={[
                         {label:'About', onClick:{handleClick}, href:'#about'},
                         {label:'How It Works', onClick:{handleClick}, href:'#howItWorks'} ,
