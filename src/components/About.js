@@ -5,6 +5,7 @@ import AboutImg from '../assets/aboutImg.svg'
 const About = () => {
     return (
             <Box
+                overflow='hidden'
                 direction='row-responsive'
                 justify='evenly'
                 alignContent='center'
@@ -15,8 +16,9 @@ const About = () => {
                     alignSelf='center'   
                     size='small'
                     style={{fontFamily: 'Spectral', textDecoration:'underline'}}
-                >About</Heading>
-                    <Paragraph>
+                >About
+                </Heading>
+                    <Paragraph margin='small'>
                         Bicycle rights irony actually neutra typewriter lyft. 
                         Man bun taxidermy put a bird on it, umami yr ramps pop-up ugh bushwick 
                         chia lo-fi. Occupy bitters pour-over snackwave you probably haven't 
@@ -28,7 +30,7 @@ const About = () => {
                 </Box>
                 <Box>
                     <img 
-                    style={{width:'40rem'}}
+                    style={{width:'25rem'}}
                     src={AboutImg}  alt='Lighthouse'/>  
                 </Box>
             </Box>
