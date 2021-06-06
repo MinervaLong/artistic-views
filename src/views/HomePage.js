@@ -7,6 +7,7 @@ import HowItWorks from '../components/HowItWorks'
 import Footer from '../components/Footer'
 import SignIn from './SignIn'
 import SignUp from './SignUp'
+import {Box} from 'grommet'
 
 const HomePage = () => {
     return(
@@ -14,8 +15,17 @@ const HomePage = () => {
             <Router>
               <NavBar />
               <Cover />
-              <About />
-              <HowItWorks />
+              <Box
+                as='main'
+                direction='column'
+                justify='between'
+                alignContent='center'
+                alignSelf='stretch'
+                gap='large'
+              >
+                <About />
+                <HowItWorks />
+              </Box>              
               <Footer />            
                 <div>
                     <Switch>
