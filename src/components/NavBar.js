@@ -1,19 +1,9 @@
 import React, {useState} from 'react' 
-import { NavLink } from 'react-router-dom'
-import { Menu, Box, Nav} from 'grommet'
+import { Menu, Box, Nav, Anchor} from 'grommet'
 import { ResponsiveContext } from 'grommet'
 import navBarLogo from '../assets/navBarLogo.png'
 
-
-
 const NavBar = () => {
-    const [click, setClick] = useState(false);
-    const handleClick = () => {
-        return(
-            setClick(!click)
-        )
-    }
-    const CustomLink = props => (<NavLink style={{textDecoration: "none", color: "secondArt"}} {...props} />);
 
     return(
         <ResponsiveContext.Consumer>
@@ -29,28 +19,28 @@ const NavBar = () => {
                 elevation='medium'
                 style={{position:'sticky', top:'0',zIndex:'1'}}
             >
-                <NavLink exact to='../views/HomePage.js'>
+                <a href='#top'>
                     <img 
                         src={navBarLogo} 
                         width='30rem' 
                         style={{marginTop:'.5rem'}}
                         alt='Navbar logo'/>
-                </NavLink>
+                </a>
                 
                 {(size === 'medium' || size === 'large') ? (
-                        <Nav direction='row-responsive' pad='medium' >                
-                            <CustomLink smooth to='#about'onClick={handleClick}>About</CustomLink>
-                            <CustomLink smooth to='#howItWorks' onClick={handleClick}>How It Works</CustomLink>
-                            <CustomLink to='../views/SignIn.js' onClick={handleClick}>Sign In</CustomLink>
-                            <CustomLink to='../views/SignUp.js' onClick={handleClick}>Sign Up</CustomLink>
+                        <Nav direction='row-responsive' pad='medium' >                        
+                            <a style={{textDecoration: "none", color: "secondArt",fontWeight:'bold'}} href='#about'>About</a>                          
+                            <a style={{textDecoration: "none", color: "secondArt",fontWeight:'bold'}} href='#howItWorks'>How It Works</a>
+                            <a style={{textDecoration: "none", color: "secondArt",fontWeight:'bold'}} href='../views/SignIn.js'>Sign In</a>
+                            <a style={{textDecoration: "none", color: "secondArt",fontWeight:'bold'}} href='../views/SignUp.js'>Sign Up</a>
                         </Nav> 
                                    
                 ):( <Menu focusIndicator={false}
                     items={[
-                        {label:'About', onClick:{handleClick}, href:'#about'},
-                        {label:'How It Works', onClick:{handleClick}, href:'#howItWorks'} ,
-                        {label:'Sign-In', onClick:{handleClick}, href:'../views/SignIn.js'}, 
-                        {label:'SignUp', onClick:{handleClick}, href:'../views/SignUp.js'},        
+                        {label:'About', href:'#about'},
+                        {label:'How It Works', href:'#howItWorks'} ,
+                        {label:'Sign-In', href:'../views/SignIn.js'}, 
+                        {label:'SignUp',  href:'../views/SignUp.js'},        
                     ]} />)
             }  
             </Box>

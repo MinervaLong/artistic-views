@@ -5,7 +5,7 @@ import HomePage from './views/HomePage'
 const theme = {
   global: {
     colors: {
-      primary:'#F6E64A',
+      primary:'#FFC100',
       background:'#E1E6E2',
       secondArt:'#722D78',
     },
@@ -19,6 +19,11 @@ const theme = {
       }
     }
   },
+  tab: {
+    active: {
+      color:'#215732'
+    }
+  }
 };
 
 function App() {

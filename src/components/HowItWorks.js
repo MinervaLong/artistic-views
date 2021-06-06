@@ -7,6 +7,7 @@ import imageHIW from '../assets/imageHIW.svg'
 const HowItWorks = () => {
     return(
         <Box
+            id='howItWorks'
             overflow='hidden'
             direction='row-responsive'
             justify='evenly'

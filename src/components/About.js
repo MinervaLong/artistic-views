@@ -5,6 +5,7 @@ import AboutImg from '../assets/aboutImg.svg'
 const About = () => {
     return (
             <Box
+                id='about'
                 overflow='hidden'
                 direction='row-responsive'
                 justify='evenly'
@@ -12,7 +13,7 @@ const About = () => {
                 style={{alignItems:'center'}}
             >
                 <Box>
-                <Heading
+                <Heading                    
                     alignSelf='center'   
                     size='small'
                     style={{fontFamily: 'Spectral', textDecoration:'underline'}}

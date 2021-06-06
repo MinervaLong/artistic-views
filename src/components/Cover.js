@@ -8,7 +8,7 @@ const Cover = () => {
         <ResponsiveContext.Consumer>
             {size => (  
                 (size === 'large') ? 
-                (<Box height="large" fill='horizontal'  style={{boxShadow: '0px 4px 8px rgba(0,0,0,0.20)'}}>
+                (<Box id='top' height="large" fill='horizontal'  style={{boxShadow: '0px 4px 8px rgba(0,0,0,0.20)'}}>
                     <Image
                         style={{backgroundPosition:'center center'}}         
                         fit="cover"
@@ -17,7 +17,7 @@ const Cover = () => {
                     />
                 </Box>)
                 : 
-                (<Box height="medium" fill='horizontal'  style={{boxShadow: '0px 4px 8px rgba(0,0,0,0.20)'}}>
+                (<Box id='top' height="medium" fill='horizontal'  style={{boxShadow: '0px 4px 8px rgba(0,0,0,0.20)'}}>
                         <Image
                             style={{backgroundPosition:'center center'}}         
                             fit="cover"
