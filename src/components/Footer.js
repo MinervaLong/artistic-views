@@ -4,17 +4,16 @@ import { Anchor, Footer } from 'grommet'
 
 const FooterC = () => {
     return(
-        <Footer 
-            gap='small' 
-            justify='evenly' 
+        <Footer        
+            direction='row-responsive'            
+            justify='evenly'
+            alignContent='center'
             background="primary" 
             pad="medium"
-            style={{
-                marginTop:'2rem'
-            }}
+
         >
-            <Anchor href='' color='secondArt' label="Copyright" />
-            <Anchor href='' color='secondArt' label="Privacy Agreement" alignT />
+            <Anchor alignSelf='center' href='' color='secondArt' label="Copyright" />
+            <Anchor alignSelf='center' href='' color='secondArt' label="Privacy Agreement" alignT />
             <SocialMedia />
         </Footer>         
     )
