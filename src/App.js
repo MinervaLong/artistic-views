@@ -13,6 +13,11 @@ const theme = {
       family: 'Karla',      
       size: '18px',
     },
+    focus: {
+      border: {
+        color:'none'
+      }
+    }
   },
 };
 
