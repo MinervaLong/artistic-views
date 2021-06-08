@@ -1,6 +1,6 @@
 import React from 'react'
 import { Grommet } from 'grommet';
-import HomePage from './views/HomePage'
+import HomePage from './components/SideBar'
 
 const theme = {
   global: {
@@ -8,6 +8,7 @@ const theme = {
       primary:'#FFC100',
       background:'#E1E6E2',
       secondArt:'#722D78',
+      secondMan:'#215732'
     },
     font: {
       family: 'Karla',      
@@ -17,13 +18,19 @@ const theme = {
       border: {
         color:'none'
       }
-    }
+    },
+    
   },
   tab: {
     active: {
       color:'#215732'
     }
+  },
+  button:{
+    active: {
+      borderColor:'none'
   }
+ } 
 };
 
 function App() {
