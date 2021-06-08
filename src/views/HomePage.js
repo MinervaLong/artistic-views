@@ -29,11 +29,11 @@ const HomePage = () => {
               <Footer />            
                 <div>
                     <Switch>
-                        <Route exact path='../views/HomePage.js' component={HomePage} />
-                        <Route path='../components/About' component={About} />
-                        <Route path='../components/HowItWorks.js' component={HowItWorks} />
-                        <Route path='./SignIn' component={SignIn} />
-                        <Route path='./SignUp.js' component={SignUp} />
+                        <Route exact path='./HomePage' component={HomePage} />
+                        <Route path='/components/About' component={About} />
+                        <Route path='/components/HowItWorks.js' component={HowItWorks} />
+                        <Route path='/SignIn' component={SignIn} />
+                        <Route path='./SignUp' component={SignUp} />
                     </Switch>
                 </div>
                 

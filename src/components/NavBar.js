@@ -1,7 +1,8 @@
-import React, {useState} from 'react' 
-import { Menu, Box, Nav, Anchor} from 'grommet'
+import React from 'react' 
+import { Menu, Box, Nav} from 'grommet'
 import { ResponsiveContext } from 'grommet'
 import navBarLogo from '../assets/navBarLogo.png'
+
 
 const NavBar = () => {
 
