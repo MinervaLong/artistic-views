@@ -1,6 +1,6 @@
 import React from 'react'
 import { Grommet } from 'grommet';
-import HomePage from './components/SideBar'
+import HomePage from './views/ProfileDashboard'
 
 const theme = {
   global: {
