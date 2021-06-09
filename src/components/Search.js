@@ -1,15 +1,19 @@
-import React from 'react' 
+import React, {useState} from 'react'
+import {TextInput} from 'grommet'
+import {FormSearch} from 'grommet-icons' 
 
 const Search = () => {
-    return(
-            <div>
-                {/*
-                    Input con submit
-                    Shows Explore component filtered by different categories once it click submit
-                 */}
-                 <p>Search component</p>
-            </div>
-    )
+    const [value, setValue] = useState('');
+  return (
+    <TextInput
+        placeholder="Search..."
+        value={value}
+        onChange={event => setValue(event.target.value)}
+        icon={<FormSearch />}
+        reverse={true}
+    
+    />
+  );
 }
 
 export default Search;
