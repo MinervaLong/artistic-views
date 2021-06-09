@@ -1,27 +1,29 @@
-import React from 'react'
-import PublicProfile from './PublicProfile'
+import React, {useState} from 'react'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {Box} from 'grommet'
+import PublicProfile from '../views/PublicProfile'
 import Explore from '../components/Explore'
-import SideBar from '../components/Sidebar'
+import SideBar from '../components/SideBar'
 
 const ProfileDashboard = () => {
-    return(
-        <div>
-            {/*
-            Sidebar with 
-            Search component
-                    Log out, it comes back to HomePage
-                    Edit mode, which activate de edit fields like LinedIn or Moodle
-                    Explore, which change the public profile view to search view
-                    Settings, Complete name,change password, Delete Account
-            Main section PublicProfile (empty if is the first time)
-            Search component when click it changes the view to explore
-         */}
-         <SideBar />
-         <PublicProfile />
-         <Explore />
-         <p>Aquí el dashboard para rellenar el perfil</p>
+    const [editMode, setEditMode] = useState(false)
+    
+    //Makes appear an edit Icon besides every field by
+        //Conditional rendering
+    let handleEdit = () =>  setEditMode(!editMode)
+        
+       
+    
 
-        </div>
+    return(
+        <Router>
+            <Box direction='row-responsive'>
+                <SideBar click={handleEdit}/>
+                <PublicProfile editMode={editMode}/>
+                <Route path='./PublicProfile' exact={true} component={PublicProfile} />
+                <Route path='../components/Explore.js' exact={true} component={Explore} />
+            </Box>
+        </Router>
         
 
     )
