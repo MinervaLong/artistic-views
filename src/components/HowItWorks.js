@@ -3,8 +3,10 @@ import { Box, Heading, Tabs, Tab, Button } from 'grommet'
 import DiagramHIW from '../assets/diagramHIW.png'
 import DiagramHIW2 from '../assets/diagramHIW2.png'
 import imageHIW from '../assets/imageHIW.svg'
+import { Link, withRouter } from 'react-router-dom'
 
 const HowItWorks = () => {
+   
     return(
         <Box
             id='howItWorks'
@@ -28,15 +30,19 @@ const HowItWorks = () => {
                     <Tab title="I'm an artist" margin='none'>
                         <Box pad="medium" width='large'>
                             <img alt='diagram about how it works the app' src={DiagramHIW2} />
-                            
-                            <Button size='large' margin='medium' alignSelf='center' primary label="Join" />                                                          
+                            <Link  to='/sign-up'>
+                                <Button size='large' margin='medium'  primary label="Join" /> 
+                            </Link>                                                          
                         </Box>
                     </Tab>
                     <Tab title="I have a restaurant">
                         <Box pad="medium" width='large'>
                             <img alt='diagram about how it works the app' src={DiagramHIW} />
-                            <Button size='large' margin='medium' alignSelf='center' primary label="Join" />   
+                            <Link to='/sign-up'>
+                                <Button size='large'  margin='medium'  primary label="Join" /> 
+                            </Link> 
                         </Box>
+                         
                     </Tab>
                 </Tabs>
             </Box>
@@ -46,4 +52,4 @@ const HowItWorks = () => {
     )
 }
 
-export default HowItWorks;
+export default withRouter(HowItWorks);

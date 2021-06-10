@@ -2,8 +2,9 @@ import React, {useState} from 'react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
-import {Form, Image, Heading, FormField, Select, TextInput, CheckBox, Box, Button, Text} from 'grommet'
+import {Form, Image, Heading, FormField, TextInput, CheckBox, Box, Button, Text} from 'grommet'
 import signUpImg from '../assets/signUpImg.svg'
+import { Link, withRouter } from 'react-router-dom'
 
 // Yup Schema to validate fields
 const SignUpSchema = yup.object().shape({
@@ -113,7 +114,10 @@ const SignUp = () => {
                    <Text color='status-critical' size='small'>{errors.checked && 'The Privacy Policy must be accepted'}</Text>
                     
                     <Box direction="row" justify='evenly' margin='small'>
-                        <Button type="submit" id='submit' color='primary' label="Sign-Up" />
+                        <Link to='/dashboard'>
+                            <Button type="submit" id='submit' color='primary' label="Sign-Up" />
+                        </Link>
+                        
                         <Button type="reset" label="Reset" />
                     </Box>
                 </Form>
@@ -123,4 +127,4 @@ const SignUp = () => {
     )
 }
 
-export default SignUp;
+export default withRouter(SignUp);

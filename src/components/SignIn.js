@@ -4,6 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import {Form, Image, Heading, FormField,TextInput, CheckBox, Box, Button, Anchor, Text} from 'grommet'
 import signInImg from '../assets/signInImg.svg'
+import { Link, withRouter } from 'react-router-dom'
 
 // Yup Schema to validate fields
 const SignInSchema = yup.object().shape({    
@@ -84,7 +85,10 @@ const SignIn = () => {
                     />
 
                     <Box direction="row" justify='center' margin='small'>
-                        <Button type="submit" id='submit' color='primary' label="Sign-Up" />
+                        <Link to='/dashboard'>
+                            <Button type="submit" id='submit' color='primary' label="Sign-In" />
+                        </Link>
+                        
                     </Box>
                     <Anchor href='#' label='Forgot your passwod?'/>
                 </Form>
@@ -94,4 +98,4 @@ const SignIn = () => {
     )
 }
 
-export default SignIn;
+export default withRouter(SignIn);
