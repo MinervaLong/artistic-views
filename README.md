@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+ ![web_screenshot](https://user-images.githubusercontent.com/54006453/121516681-cafe6080-c9ee-11eb-96bb-3b372293ac0e.png)
+                              ![phone_screenshot](https://user-images.githubusercontent.com/54006453/121516668-c76ad980-c9ee-11eb-8a15-15ec1a94cc15.png)  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Artistic Views Project
 
-## Available Scripts
+This project is meant to be a website to help no professional artists to promote their work and find alternatives spaces to show it. This alternatives are restaurants or cafes so, at the same time, it pretends to offer to these businesses an adding value for their clients.
 
-In the project directory, you can run:
+This project is only for educational purposes although it would be nice to inspire some social initiative.
 
-### `yarn start`
+## Motivation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+A couple of years ago I took draw lessons and we did some exhibitions in our educational center, but I missed the oportunity to show our work in different environments. Besides local galleries, there are not many options (it's hard enough for professionals already). Thinking about it, I came up with this idea to practice and improve my React skills.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+## Status
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Building the layout of the different views of the website. The updated code is in develop branch. The next objectives will be learn and apply user authentication. 
 
-### `yarn build`
+## Tech/Framework used
+Built with:
+* [React](https://reactjs.org/)
+* [Grommet](https://v2.grommet.io/)
+* [Dummyapi.io](https://dummyapi.io/) 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation
+Inside the folder where you want to put your project:
+```
+git clone https://github.com/MinervaLong/artistic-views
+cd artistic-views
+npm install
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Other dependencies included in the project:
+* [react-router-dom](https://reactrouter.com/web/guides/quick-start)
+* [react-hook-forms](https://react-hook-form.com/)
+* [Axios](https://www.npmjs.com/package/axios)
+* [Yup](https://www.npmjs.com/package/yup#mixeddefaultvalue-any-schema) 
+* [Grommet-icons](https://icons.grommet.io/?)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Credits
 
-### `yarn eject`
+[Credit for Sign-Up image](https://storyset.com/mobile) - Mobile illustrations by Storyset 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+[Credit for Login image](https://storyset.com/app) - App illustrations by Storyset
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[Credit for HowItWorks section image](https://storyset.com/web) - Web illustrations by Storyset
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+[Credit for About image](https://storyset.com/transport) - Transport illustrations by Storyset
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Credit for diagram image](https://www.freepik.es/vectores/infografia) - Vector de Infografía creado por freepik - www.freepik.es</a>
