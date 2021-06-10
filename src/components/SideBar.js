@@ -1,24 +1,12 @@
 import React, {useContext} from "react";
-import { useHistory } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { Sidebar, Avatar, Nav, Button, Box, Anchor } from "grommet";
-import { Edit, Logout, UserSettings, Gallery, FormSearch} from "grommet-icons";
+import { Apps,Edit, Logout, UserSettings, Gallery, FormSearch} from "grommet-icons";
 import Search from "../components/Search";
 import { ResponsiveContext } from "grommet";
 
 const SideBarC = (props) => {
     const size = useContext(ResponsiveContext);
-    
-    const history = useHistory();
-    const handleLogout = () => {
-        //Back to the HomePage
-        history.push('/src/views/HomePage.js')
-    }
-
-    const handleExplore = () => {
-        //Call to Explore component
-        history.push('./Explore.js')
-    }
-
    
   return ( 
     <Box>
@@ -39,16 +27,29 @@ const SideBarC = (props) => {
                 />
                 </Box>
             }
-            footer={<Button icon={<Logout />} label="Log out" plain onClick={handleLogout}/>}
+            footer={
+                <Link to='/'>
+                    <Button icon={<Logout />} label="Log out" plain color='#FFF'/>
+                </Link>
+            }
             >
-            <Nav gap="large">
-              <Button
-                icon={<Gallery />}
-                label="Explore"
-                style={{ border: "none" }}
-                onClick={handleExplore}
 
-                />
+            <Nav gap="large">
+                <Link exact to='/dashboard/public-profile'>
+                    <Button
+                        icon={<Apps />}
+                        label="Profile"
+                        style={{ border: "none" }}
+                    />
+                </Link>
+
+                <Link exact to='/dashboard/explore'>
+                    <Button
+                        icon={<Gallery />}
+                        label="Explore"
+                        style={{ border: "none" }}
+                    />
+                </Link>
 
                 <Button
                 icon={<Edit />}
@@ -83,4 +84,4 @@ const SideBarC = (props) => {
 
   );
 };
-export default SideBarC;
+export default withRouter(SideBarC);

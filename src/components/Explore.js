@@ -22,8 +22,7 @@ const Explore = () => {
         const usersList  = result.data.data
         console.log('usersList',usersList)
         setData(usersList)       
-    },[]);
-    
+    },[]);    
     
     const cardComponent = data.map((user)=> {
         return <UserCard 
@@ -36,8 +35,7 @@ const Explore = () => {
     })
 
     return (
-        <Box 
-            
+        <Box             
         >
             <Heading level='2' alignSelf='center'>Find your next artist</Heading>
             <Box direction='row-responsive'justify='evenly' wrap={true}>

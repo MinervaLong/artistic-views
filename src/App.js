@@ -1,6 +1,13 @@
 import React from 'react'
+import {Switch, Route, Redirect} from 'react-router-dom'
 import { Grommet } from 'grommet';
-import HomePage from './views/ProfileDashboard'
+import NavBar from './components/NavBar'
+import HomePage from './components/HomePage'
+import Footer from './components/Footer'
+import SignIn from './components/SignIn'
+import SignUp from './components/SignUp'
+import ProfileDashboard from './views/ProfileDashboard'
+import Explore from './components/Explore'
 
 const theme = {
   global: {
@@ -35,9 +42,42 @@ const theme = {
 
 function App() {
   return (
-    <Grommet theme={theme} full>
-      <HomePage />
-    </Grommet>  
+      <Grommet theme={theme} full>
+        <NavBar />        
+        <Switch> 
+          <Route exact path='/' component={HomePage} />         
+          <Route 
+            exact 
+            path='/sign-in'
+            render={ () => {
+              return <SignIn  />
+            }}/>
+
+          <Route 
+            exact 
+            path='/sign-up'
+            render={ () => {
+              return <SignUp  />
+            }}/>  
+
+          <Route 
+            exact 
+            path='/dashboard'
+            render={ () => {
+              return <ProfileDashboard  />
+            }}/>
+
+          <Route 
+            exact 
+            path='/dashboard/explore'
+            render={ () => {
+              return <Explore  />
+            }}/>      
+
+          <Redirect to="/" />          
+        </Switch>
+        <Footer />
+      </Grommet>  
   );
 
 }

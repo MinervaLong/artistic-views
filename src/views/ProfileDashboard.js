@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {Switch, Route} from 'react-router-dom'
 import {Box} from 'grommet'
 import PublicProfile from '../views/PublicProfile'
 import Explore from '../components/Explore'
@@ -10,20 +10,30 @@ const ProfileDashboard = () => {
     
     //Makes appear an edit Icon besides every field by
         //Conditional rendering
-    let handleEdit = () =>  setEditMode(!editMode)
-        
-       
-    
+    let handleEdit = () =>  setEditMode(!editMode)   
 
     return(
-        <Router>
-            <Box direction='row-responsive'>
-                <SideBar click={handleEdit}/>
-                <PublicProfile editMode={editMode}/>
-                <Route path='./PublicProfile' exact={true} component={PublicProfile} />
-                <Route path='../components/Explore.js' exact={true} component={Explore} />
-            </Box>
-        </Router>
+        <Box direction='row-responsive'>
+            <SideBar click={handleEdit}/>
+            <Switch> 
+            <Route exact path='/dashboard'><PublicProfile editMode={editMode} /> </Route>
+                <Route 
+                    exact 
+                    path='/dashboard/public-profile'
+                    render={ () => {
+                    return  <PublicProfile />
+                }}/>      
+         
+                <Route 
+                    exact 
+                    path='/dashboard/explore'
+                    render={ () => {
+                    return <Explore  />
+                }}/>
+  
+            </Switch>
+        </Box>
+        
         
 
     )
