@@ -14,7 +14,7 @@ A couple of years ago I took draw lessons and we did some exhibitions in our edu
 
 ## Status
 
-Building the layout of the different views of the website. The updated code is in develop branch. The next objectives will be learn and apply user authentication. 
+Building the layout of the different views of the website. The updated code is in develop branch. The next objective will be learn and apply user authentication. 
 
 ## Tech/Framework used
 Built with:
@@ -23,7 +23,7 @@ Built with:
 * [Dummyapi.io](https://dummyapi.io/) 
 
 ## Installation
-Inside the folder where you want to put your project:
+In the terminal, inside the folder where you want to put your project:
 ```
 git clone https://github.com/MinervaLong/artistic-views
 cd artistic-views
@@ -31,7 +31,7 @@ npm install
 npm start
 ```
 
-Other dependencies included in the project:
+Dependencies included:
 * [react-router-dom](https://reactrouter.com/web/guides/quick-start)
 * [react-hook-forms](https://react-hook-form.com/)
 * [Axios](https://www.npmjs.com/package/axios)
