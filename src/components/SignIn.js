@@ -4,7 +4,8 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import {Form, Image, Heading, FormField,TextInput, CheckBox, Box, Button, Anchor, Text} from 'grommet'
 import signInImg from '../assets/signInImg.svg'
-import { Link, withRouter } from 'react-router-dom'
+import { login } from '../auth/auth'
+import  NavLayout  from './NavLayout'
 
 // Yup Schema to validate fields
 const SignInSchema = yup.object().shape({    
@@ -13,21 +14,27 @@ const SignInSchema = yup.object().shape({
     remember: yup.bool(),
 })
 
-const SignIn = () => {
-    const {register, handleSubmit, formState:{errors}} = useForm({
+const SignIn = (props) => {
+    const {register, formState:{errors}} = useForm({
         resolver: yupResolver(SignInSchema), //Connect Yup with react-hooks-form
     });
 
     const [checked, setChecked] = React.useState(true);
 
-    const signUpSubmit = (data) => {
+    /*const signUpSubmit = (data) => {
         console.log(data)
         // display form data on success
         alert('SUCCESS!! :-)\n\n' + JSON.stringify(data, null, 4));
-        return false;
-    }
+    }*/
+
+    // LOGIN SUCCESS
+    const onFinish = values => {
+        console.log('Success:', values.value);
+        login(props, values.value);
+    };
 
     return(
+        <NavLayout isNav={true}>
           <Box
             as='main'
             direction='row'
@@ -53,7 +60,10 @@ const SignIn = () => {
               >
                                 
                 <Heading level='2'>Login</Heading>
-                <Form onSubmit={handleSubmit(signUpSubmit)}>
+                <Form 
+                    name='form'
+                    onSubmit={onFinish}
+                >
                     <FormField label="Email">
                         <TextInput
                             type='email'
@@ -85,17 +95,15 @@ const SignIn = () => {
                     />
 
                     <Box direction="row" justify='center' margin='small'>
-                        <Link to='/dashboard'>
-                            <Button type="submit" id='submit' color='primary' label="Sign-In" />
-                        </Link>
-                        
+                        <Button type="submit" color='primary' label="Sign-In" />
                     </Box>
                     <Anchor href='#' label='Forgot your passwod?'/>
                 </Form>
             </Box>
             <Box width='32rem' ><Image fit='contain' src={signInImg}></Image></Box> 
         </Box>
+    </NavLayout>
     )
 }
 
-export default withRouter(SignIn);
+export default SignIn;
