@@ -1,16 +1,6 @@
-import React, { useState, useMemo } from 'react'
-import {Switch, Redirect} from 'react-router-dom'
-import {UserContext} from './hooks/UserContext'
+import React from 'react'
 import { Grommet } from 'grommet';
-
-import HomePage from './components/HomePage'
-import SignIn from './components/SignIn'
-import SignUp from './components/SignUp'
-import ProfileDashboard from './views/ProfileDashboard'
-import Explore from './components/Explore'
-
-import PrivateRoute from './hooks/PrivateRoute'
-import PublicRoute from './hooks/PublicRoute'
+import HomePage from './views/ProfileDashboard'
 
 const theme = {
   global: {
@@ -43,40 +33,11 @@ const theme = {
  } 
 };
 
-const App = () => {
-  const [user, setUser] = useState(null);
-
-  const value = useMemo(() => ({ user, setUser }), [user, setUser]);
-  
-   return (
-     <UserContext.Provider value={value}>
-      <Grommet theme={theme} full>
-               
-        <Switch> 
-          <PublicRoute  exact path='/' component={HomePage} />         
-          <PublicRoute restricted={true} 
-            path='/sign-in'
-            component={SignIn} />
-
-          <PublicRoute
-            path='/sign-up'
-            component={SignUp}/>  
-
-          <PrivateRoute 
-            exact={true} 
-            path='/dashboard'
-            component={ProfileDashboard}/>
-
-          <PrivateRoute 
-            exact={true} 
-            path='/explore'
-            component={Explore}/>      
-
-          <Redirect to='/'/>          
-        </Switch>
-        
-      </Grommet> 
-      </UserContext.Provider> 
+function App() {
+  return (
+    <Grommet theme={theme} full>
+      <HomePage />
+    </Grommet>  
   );
 
 }

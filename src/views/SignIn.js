@@ -4,8 +4,6 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import {Form, Image, Heading, FormField,TextInput, CheckBox, Box, Button, Anchor, Text} from 'grommet'
 import signInImg from '../assets/signInImg.svg'
-import { login } from '../auth/auth'
-import  NavLayout  from './NavLayout'
 
 // Yup Schema to validate fields
 const SignInSchema = yup.object().shape({    
@@ -14,27 +12,21 @@ const SignInSchema = yup.object().shape({
     remember: yup.bool(),
 })
 
-const SignIn = (props) => {
-    const {register, formState:{errors}} = useForm({
+const SignIn = () => {
+    const {register, handleSubmit, formState:{errors}} = useForm({
         resolver: yupResolver(SignInSchema), //Connect Yup with react-hooks-form
     });
 
     const [checked, setChecked] = React.useState(true);
 
-    /*const signUpSubmit = (data) => {
+    const signUpSubmit = (data) => {
         console.log(data)
         // display form data on success
         alert('SUCCESS!! :-)\n\n' + JSON.stringify(data, null, 4));
-    }*/
-
-    // LOGIN SUCCESS
-    const onFinish = values => {
-        console.log('Success:', values.value);
-        login(props, values.value);
-    };
+        return false;
+    }
 
     return(
-        <NavLayout isNav={true}>
           <Box
             as='main'
             direction='row'
@@ -60,10 +52,7 @@ const SignIn = (props) => {
               >
                                 
                 <Heading level='2'>Login</Heading>
-                <Form 
-                    name='form'
-                    onSubmit={onFinish}
-                >
+                <Form onSubmit={handleSubmit(signUpSubmit)}>
                     <FormField label="Email">
                         <TextInput
                             type='email'
@@ -95,14 +84,13 @@ const SignIn = (props) => {
                     />
 
                     <Box direction="row" justify='center' margin='small'>
-                        <Button type="submit" color='primary' label="Sign-In" />
+                        <Button type="submit" id='submit' color='primary' label="Sign-Up" />
                     </Box>
                     <Anchor href='#' label='Forgot your passwod?'/>
                 </Form>
             </Box>
             <Box width='32rem' ><Image fit='contain' src={signInImg}></Image></Box> 
         </Box>
-    </NavLayout>
     )
 }
 

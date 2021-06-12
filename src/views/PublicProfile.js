@@ -38,13 +38,13 @@ const PublicProfile = ({editMode}) => {
                     <CardBody pad="medium">
                     {editMode ?
                         (<Box direction="row"  gap="small" alignSelf='center' >
-                            <Avatar size='xlarge' background="secondArt">
+                            <Avatar size='xlarge' background="secondMan">
                                 <UserFemale color="accent-1" />
                             </Avatar><Edit />
                         </Box>)
                     :
                     (<Box direction="row"  gap="small" alignSelf='center' >
-                        <Avatar size='xlarge' background="secondArt">
+                        <Avatar size='xlarge' background="secondMan">
                             <UserFemale color="accent-1" />
                         </Avatar>
                     </Box>)

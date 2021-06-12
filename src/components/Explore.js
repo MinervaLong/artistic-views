@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import UserCard from './UserCard'
-import {Box} from 'grommet'
-import Layout from '../components/Layout'
+import {Box, Heading} from 'grommet'
 
 const BASE_URL = 'https://dummyapi.io/data/api/user?limit=12';
 const APP_ID = '60c08cbe9c9883b1fb33da7b';
@@ -23,7 +22,8 @@ const Explore = () => {
         const usersList  = result.data.data
         console.log('usersList',usersList)
         setData(usersList)       
-    },[]);    
+    },[]);
+    
     
     const cardComponent = data.map((user)=> {
         return <UserCard 
@@ -36,23 +36,14 @@ const Explore = () => {
     })
 
     return (
-        <Layout isSideBar={true} >
-            <Box
-                as='section'
-                direction='row'
-                height='100vh'
-                overflow='scroll'
-                >
+        <Box 
             
-                <Box 
-                    direction='row'
-                    justify='center'
-                    wrap={true}
-                >
-                    {cardComponent}
-                </Box>
-            </Box>         
-        </Layout>
+        >
+            <Heading level='2' alignSelf='center'>Find your next artist</Heading>
+            <Box direction='row-responsive'justify='evenly' wrap={true}>
+                {cardComponent}
+            </Box>
+        </Box>
     );
 };
 

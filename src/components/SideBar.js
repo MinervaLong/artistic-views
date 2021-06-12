@@ -1,30 +1,32 @@
-import React, {useContext, useState, useEffect} from "react";
-import { Link } from 'react-router-dom'
+import React, {useContext} from "react";
+import { useHistory } from 'react-router-dom'
 import { Sidebar, Avatar, Nav, Button, Box, Anchor } from "grommet";
-import { Apps,Edit, Logout, UserSettings, Gallery, FormSearch} from "grommet-icons";
+import { Edit, Logout, UserSettings, Gallery, FormSearch} from "grommet-icons";
 import Search from "../components/Search";
 import { ResponsiveContext } from "grommet";
-import { logout, isLogin } from "../auth/auth";
 
 const SideBarC = (props) => {
     const size = useContext(ResponsiveContext);
-
-    const [state, setState] = useState(false)
-
-    useEffect(() => setState(isLogin()), [props])
-
+    
+    const history = useHistory();
     const handleLogout = () => {
-        logout();
-        setState(false)
+        //Back to the HomePage
+        history.push('/src/views/HomePage.js')
     }
+
+    const handleExplore = () => {
+        //Call to Explore component
+        history.push('./Explore.js')
+    }
+
    
   return ( 
-    <Box as='SideBar'>
+    <Box>
        {size === 'medium' || size === 'large' || size === 'xlarge' ? ( 
         <Box direction="row" style={{height:'100vh'}}>          
             <Sidebar
-            width='15rem'
-            background="secondArt"
+            width="15rem"
+            background="secondMan"
             pad={{ left: "medium", right: "large", vertical: "medium" }}
             elevation="medium"
             header={
@@ -37,32 +39,16 @@ const SideBarC = (props) => {
                 />
                 </Box>
             }
-            footer={
-                <div>
-                    {state && 
-                        <Link onClick={() => handleLogout()} to='/'>
-                            <Button icon={<Logout />} label="Log out" plain color='#FFF'/>
-                        </Link>}
-                </div>
-            }
+            footer={<Button icon={<Logout />} label="Log out" plain onClick={handleLogout}/>}
             >
-
             <Nav gap="large">
-                <Link exact to='/dashboard'>
-                    <Button
-                        icon={<Apps />}
-                        label="Profile"
-                        style={{ border: "none" }}
-                    />
-                </Link>
+              <Button
+                icon={<Gallery />}
+                label="Explore"
+                style={{ border: "none" }}
+                onClick={handleExplore}
 
-                <Link exact to='/explore'>
-                    <Button
-                        icon={<Gallery />}
-                        label="Explore"
-                        style={{ border: "none" }}
-                    />
-                </Link>
+                />
 
                 <Button
                 icon={<Edit />}
@@ -73,10 +59,8 @@ const SideBarC = (props) => {
                 <Button
                 icon={<UserSettings />}
                 label="Settings"
-                style={{ border: "none"}}
+                style={{ border: "none" }}
                 />
-
-              
             </Nav>
             </Sidebar>
             </Box> 
