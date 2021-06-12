@@ -4,6 +4,8 @@ import About from '../components/About'
 import HowItWorks from '../components/HowItWorks'
 
 import {Box} from 'grommet'
+import NavBar from './NavBar'
+import Footer from './Footer'
 
 const HomePage = () => {
     return(    
@@ -15,9 +17,11 @@ const HomePage = () => {
         alignSelf='stretch'
         gap='large'
       >
+        <NavBar /> 
         <Cover />
         <About />
         <HowItWorks />
+        <Footer />
       </Box>  
     )
 }

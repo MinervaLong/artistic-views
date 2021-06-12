@@ -1,13 +1,16 @@
-import React from 'react'
-import {Switch, Route, Redirect} from 'react-router-dom'
+import React, { useState, useMemo } from 'react'
+import {Switch, Redirect} from 'react-router-dom'
+import {UserContext} from './hooks/UserContext'
 import { Grommet } from 'grommet';
-import NavBar from './components/NavBar'
+
 import HomePage from './components/HomePage'
-import Footer from './components/Footer'
 import SignIn from './components/SignIn'
 import SignUp from './components/SignUp'
 import ProfileDashboard from './views/ProfileDashboard'
 import Explore from './components/Explore'
+
+import PrivateRoute from './hooks/PrivateRoute'
+import PublicRoute from './hooks/PublicRoute'
 
 const theme = {
   global: {
@@ -40,44 +43,40 @@ const theme = {
  } 
 };
 
-function App() {
-  return (
+const App = () => {
+  const [user, setUser] = useState(null);
+
+  const value = useMemo(() => ({ user, setUser }), [user, setUser]);
+  
+   return (
+     <UserContext.Provider value={value}>
       <Grommet theme={theme} full>
-        <NavBar />        
+               
         <Switch> 
-          <Route exact path='/' component={HomePage} />         
-          <Route 
-            exact 
+          <PublicRoute  exact path='/' component={HomePage} />         
+          <PublicRoute restricted={true} 
             path='/sign-in'
-            render={ () => {
-              return <SignIn  />
-            }}/>
+            component={SignIn} />
 
-          <Route 
-            exact 
+          <PublicRoute
             path='/sign-up'
-            render={ () => {
-              return <SignUp  />
-            }}/>  
+            component={SignUp}/>  
 
-          <Route 
-            exact 
+          <PrivateRoute 
+            exact={true} 
             path='/dashboard'
-            render={ () => {
-              return <ProfileDashboard  />
-            }}/>
+            component={ProfileDashboard}/>
 
-          <Route 
-            exact 
-            path='/dashboard/explore'
-            render={ () => {
-              return <Explore  />
-            }}/>      
+          <PrivateRoute 
+            exact={true} 
+            path='/explore'
+            component={Explore}/>      
 
-          <Redirect to="/" />          
+          <Redirect to='/'/>          
         </Switch>
-        <Footer />
-      </Grommet>  
+        
+      </Grommet> 
+      </UserContext.Provider> 
   );
 
 }

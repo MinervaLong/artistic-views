@@ -1,20 +1,30 @@
-import React, {useContext} from "react";
-import { Link, withRouter } from 'react-router-dom'
+import React, {useContext, useState, useEffect} from "react";
+import { Link } from 'react-router-dom'
 import { Sidebar, Avatar, Nav, Button, Box, Anchor } from "grommet";
 import { Apps,Edit, Logout, UserSettings, Gallery, FormSearch} from "grommet-icons";
 import Search from "../components/Search";
 import { ResponsiveContext } from "grommet";
+import { logout, isLogin } from "../auth/auth";
 
 const SideBarC = (props) => {
     const size = useContext(ResponsiveContext);
+
+    const [state, setState] = useState(false)
+
+    useEffect(() => setState(isLogin()), [props])
+
+    const handleLogout = () => {
+        logout();
+        setState(false)
+    }
    
   return ( 
-    <Box>
+    <Box as='SideBar'>
        {size === 'medium' || size === 'large' || size === 'xlarge' ? ( 
         <Box direction="row" style={{height:'100vh'}}>          
             <Sidebar
-            width="15rem"
-            background="secondMan"
+            width='15rem'
+            background="secondArt"
             pad={{ left: "medium", right: "large", vertical: "medium" }}
             elevation="medium"
             header={
@@ -28,14 +38,17 @@ const SideBarC = (props) => {
                 </Box>
             }
             footer={
-                <Link to='/'>
-                    <Button icon={<Logout />} label="Log out" plain color='#FFF'/>
-                </Link>
+                <div>
+                    {state && 
+                        <Link onClick={() => handleLogout()} to='/'>
+                            <Button icon={<Logout />} label="Log out" plain color='#FFF'/>
+                        </Link>}
+                </div>
             }
             >
 
             <Nav gap="large">
-                <Link exact to='/dashboard/public-profile'>
+                <Link exact to='/dashboard'>
                     <Button
                         icon={<Apps />}
                         label="Profile"
@@ -43,7 +56,7 @@ const SideBarC = (props) => {
                     />
                 </Link>
 
-                <Link exact to='/dashboard/explore'>
+                <Link exact to='/explore'>
                     <Button
                         icon={<Gallery />}
                         label="Explore"
@@ -60,8 +73,10 @@ const SideBarC = (props) => {
                 <Button
                 icon={<UserSettings />}
                 label="Settings"
-                style={{ border: "none" }}
+                style={{ border: "none"}}
                 />
+
+              
             </Nav>
             </Sidebar>
             </Box> 
@@ -84,4 +99,4 @@ const SideBarC = (props) => {
 
   );
 };
-export default withRouter(SideBarC);
+export default SideBarC;
