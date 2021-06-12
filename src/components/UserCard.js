@@ -12,13 +12,13 @@ import {
 
 const UserCard = (props) => {
   return (
-    <Box pad="medium" align="start">
+    <Box pad="small" align="start">
       <Card elevation="large" width="medium" pad='small' background="light-1">
         <CardBody height="small">
           <Image fit="contain" src={props.userImg} a11yTitle="User Image" />
         </CardBody>
 
-        <Box pad={{ horizontal: "medium" }} responsive={false}>
+        <Box pad={{ horizontal: "small" }} responsive={false}>
           <Heading level="3" margin={{ vertical: "medium" }} alignSelf='center'>
             {props.userName} {props.lastName}
           </Heading>

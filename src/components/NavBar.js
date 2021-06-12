@@ -2,10 +2,15 @@ import React from 'react'
 import { Menu, Box, Nav} from 'grommet'
 import { ResponsiveContext } from 'grommet'
 import navBarLogo from '../assets/navBarLogo.png'
+import { NavLink, withRouter } from 'react-router-dom'
 
 
 const NavBar = () => {
-
+    const styledLinks = {
+        textDecoration: "none", 
+        color: "secondArt",
+        fontWeight:'bold'
+    }
     return(
         <ResponsiveContext.Consumer>
             {size => (
@@ -20,28 +25,24 @@ const NavBar = () => {
                 elevation='medium'
                 style={{position:'sticky', top:'0',zIndex:'1'}}
             >
-                <a href='#top'>
+                <NavLink to='/'>
                     <img 
                         src={navBarLogo} 
                         width='30rem' 
                         style={{marginTop:'.5rem'}}
                         alt='Navbar logo'/>
-                </a>
+                </NavLink>
                 
                 {(size === 'medium' || size === 'large') ? (
                         <Nav direction='row-responsive' pad='medium' >                        
-                            <a style={{textDecoration: "none", color: "secondArt",fontWeight:'bold'}} href='#about'>About</a>                          
-                            <a style={{textDecoration: "none", color: "secondArt",fontWeight:'bold'}} href='#howItWorks'>How It Works</a>
-                            <a style={{textDecoration: "none", color: "secondArt",fontWeight:'bold'}} href='../views/SignIn.js'>Sign In</a>
-                            <a style={{textDecoration: "none", color: "secondArt",fontWeight:'bold'}} href='../views/SignUp.js'>Sign Up</a>
+                            <NavLink style={styledLinks} to='/sign-in'>Sign In</NavLink>
+                            <NavLink style={styledLinks} to='/sign-up'>Sign Up</NavLink>
                         </Nav> 
                                    
                 ):( <Menu focusIndicator={false}
                     items={[
-                        {label:'About', href:'#about'},
-                        {label:'How It Works', href:'#howItWorks'} ,
-                        {label:'Sign-In', href:'../views/SignIn.js'}, 
-                        {label:'SignUp',  href:'../views/SignUp.js'},        
+                        {label:'Sign-In', href:'/sign-in'}, 
+                        {label:'SignUp',  href:'/sign-up'},        
                     ]} />)
             }  
             </Box>
@@ -50,4 +51,4 @@ const NavBar = () => {
     )
 }
 
-export default NavBar;
+export default withRouter(NavBar);
