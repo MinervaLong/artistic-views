@@ -36,7 +36,7 @@ const Explore = () => {
     })
 
     return (
-        <Layout isSideBar={true} >
+        <Layout isDashboardNav={true} >
             <Box
                 as='section'
                 direction='row'

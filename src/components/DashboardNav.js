@@ -9,11 +9,11 @@ import {
   Gallery,
   FormSearch,
 } from "grommet-icons";
-import Search from "../components/Search";
+import Search from "./Search";
 import { ResponsiveContext } from "grommet";
 import { logout, isLogin } from "../auth/auth";
 
-const SideBarC = (props) => {
+const DashboardNav = (props) => {
   const size = useContext(ResponsiveContext);
 
   const [state, setState] = useState(false);
@@ -136,4 +136,4 @@ const SideBarC = (props) => {
     </Box>
   );
 };
-export default SideBarC;
+export default DashboardNav;

@@ -1,11 +1,11 @@
 import React from 'react'
-import SideBar from '../components/SideBar'
+import DashboardNav from '../components/DashboardNav'
 
 
 
 const Layout = props => (
     <main>
-        {props.isSideBar && <SideBar/>}
+        {props.isDashboardNav && <DashboardNav/>}
         <div>
             {props.children}
         </div>

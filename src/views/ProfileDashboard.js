@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {Box} from 'grommet'
 import PublicProfile from '../components/PublicProfile'
-import SideBar from '../components/SideBar'
+import DashboardNav from '../components/DashboardNav'
 import Layout from '../components/Layout'
 
 const ProfileDashboard = () => {
@@ -12,9 +12,9 @@ const ProfileDashboard = () => {
     let handleEdit = () =>  setEditMode(!editMode)  
 
     return(
-        <Layout isSideBar={false}>
+        <Layout isDashboardNav={false}>
             <Box direction='column'>
-                <SideBar  click={handleEdit} /> 
+                <DashboardNav  click={handleEdit} /> 
                 <PublicProfile editMode={editMode} />             
             </Box>
         </Layout>
