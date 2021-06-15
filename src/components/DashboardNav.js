@@ -46,7 +46,7 @@ const DashboardNav = (props) => {
             alignSelf="center"
             src="//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80"
           />
-          <Link exact={true} to="/dashboard">
+          <Link to="/dashboard">
             <Button
               margin={{ top: "small" }}
               plain
@@ -56,7 +56,7 @@ const DashboardNav = (props) => {
             />
           </Link>
 
-          <Link exact={true} to="/explore">
+          <Link to="/explore">
             <Button
               margin={{ top: "small" }}
               plain
