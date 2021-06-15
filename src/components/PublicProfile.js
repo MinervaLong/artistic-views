@@ -12,7 +12,7 @@ const PublicProfile = ({editMode}) => {
   
             width='100%'
             pad='medium'
-            gap='large'
+            gap='medium'
             responsive={true}
         >
                 
@@ -88,7 +88,7 @@ const PublicProfile = ({editMode}) => {
             </Box>
 
            <Box
-                style={{maxWidth:'60%', margin: '0px auto'}}
+                style={{maxWidth:'75%', margin: '0px auto'}}
                 background="light-1"
                 elevation='medium'
                 round
