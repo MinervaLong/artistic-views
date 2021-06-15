@@ -4,7 +4,7 @@ import SideBar from '../components/SideBar'
 
 
 const Layout = props => (
-    <main style={{display:'flex', flexDirection:'row'}}>
+    <main>
         {props.isSideBar && <SideBar/>}
         <div>
             {props.children}

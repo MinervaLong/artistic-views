@@ -1,102 +1,139 @@
-import React, {useContext, useState, useEffect} from "react";
-import { Link } from 'react-router-dom'
-import { Sidebar, Avatar, Nav, Button, Box, Anchor } from "grommet";
-import { Apps,Edit, Logout, UserSettings, Gallery, FormSearch} from "grommet-icons";
+import React, { useContext, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Avatar, Nav, Button, Box, Anchor } from "grommet";
+import {
+  Apps,
+  Edit,
+  Logout,
+  UserSettings,
+  Gallery,
+  FormSearch,
+} from "grommet-icons";
 import Search from "../components/Search";
 import { ResponsiveContext } from "grommet";
 import { logout, isLogin } from "../auth/auth";
 
 const SideBarC = (props) => {
-    const size = useContext(ResponsiveContext);
+  const size = useContext(ResponsiveContext);
 
-    const [state, setState] = useState(false)
+  const [state, setState] = useState(false);
 
-    useEffect(() => setState(isLogin()), [props])
+  useEffect(() => setState(isLogin()), [props]);
 
-    const handleLogout = () => {
-        logout();
-        setState(false)
-    }
-   
-  return ( 
-    <Box as='SideBar'>
-       {size === 'medium' || size === 'large' || size === 'xlarge' ? ( 
-        <Box direction="row" style={{height:'100vh'}}>          
-            <Sidebar
-            width='15rem'
-            background="secondArt"
-            pad={{ left: "medium", right: "large", vertical: "medium" }}
-            elevation="medium"
-            header={
-                <Box alignSelf="center">
-                <Search />
-                <Avatar
-                    margin={{top:'small'}}
-                    alignSelf="center"
-                    src="//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80"
-                />
-                </Box>
-            }
-            footer={
-                <div>
-                    {state && 
-                        <Link onClick={() => handleLogout()} to='/'>
-                            <Button icon={<Logout />} label="Log out" plain color='#FFF'/>
-                        </Link>}
-                </div>
-            }
-            >
+  const handleLogout = () => {
+    logout();
+    setState(false);
+  };
 
-            <Nav gap="large">
-                <Link exact to='/dashboard'>
-                    <Button
-                        icon={<Apps />}
-                        label="Profile"
-                        style={{ border: "none" }}
-                    />
-                </Link>
+  return (
+    <Box
+      full
+      tag="header"
+      direction="row"
+      align="center"
+      justify="between"
+      background="secondArt"
+      pad={{ left: "medium", right: "small" }}
+      elevation="medium"
+      style={{ position: "sticky", zIndex: "1" }}
+    >
+      {size === "medium" || size === "large" || size === "xlarge" ? (
+        <Nav gap="large" full direction="row" justify="evenly" pad="medium">
+          <Box direction="row">
+            <Search icon={<FormSearch />} />
+          </Box>
+          <Avatar
+            alignSelf="center"
+            src="//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80"
+          />
+          <Link exact={true} to="/dashboard">
+            <Button
+              margin={{ top: "small" }}
+              plain
+              color="#FFF"
+              icon={<Apps />}
+              label="Profile"
+            />
+          </Link>
 
-                <Link exact to='/explore'>
-                    <Button
-                        icon={<Gallery />}
-                        label="Find Artist"
-                        style={{ border: "none" }}
-                    />
-                </Link>
+          <Link exact={true} to="/explore">
+            <Button
+              margin={{ top: "small" }}
+              plain
+              color="#FFF"
+              icon={<Gallery />}
+              label="Find Artist"
+            />
+          </Link>
 
+          <Button
+            plain
+            color="#FFF"
+            icon={<Edit />}
+            label="Edit mode"
+            onClick={props.click}
+          />
+
+          <Button plain color="#FFF" icon={<UserSettings />} label="Settings" />
+
+          <div>
+            {state && (
+              <Link onClick={() => handleLogout()} to="/">
                 <Button
-                icon={<Edit />}
-                label="Edit mode"
-                style={{ border: "none" }}
-                onClick={props.click}
+                  icon={<Logout />}
+                  label="Log Out"
+                  plain
+                  color="#FFF"
+                  margin={{ top: "small" }}
                 />
-                <Button
-                icon={<UserSettings />}
-                label="Settings"
-                style={{ border: "none"}}
-                />
+              </Link>
+            )}
+          </div>
+        </Nav>
+      ) : (
+        <Nav
+          direction="column"
+          justify="around"
+          alignContent="center"
+          background="secondArt"
+          pad="medium"
+        >
+          <Box direction="row" justify="center">
+            <Search icon={<FormSearch />} />
+          </Box>
+          <Box direction="row" justify="around">
+            <Link exact={true} to="/dashboard">
+              <Button
+                margin={{ top: "small" }}
+                plain
+                color="#FFF"
+                icon={<Apps />}
+              />
+            </Link>
 
-              
-            </Nav>
-            </Sidebar>
-            </Box> 
-        ):(        
-            <Box>
-                <Nav direction="column" justify='around' alignContent='center' background="secondArt" pad="medium">
-                    <Box direction="row" justify='center'>
-                        <Anchor icon={<FormSearch />} lab />
-                    </Box>
-                    <Box direction="row" justify='around'>
-                        <Anchor icon={<Gallery />} />
-                        <Anchor icon={<Edit />} />
-                        <Anchor icon={<UserSettings />} />
-                        <Anchor icon={<Logout />} /> 
-                    </Box>                   
-                </Nav>    
-            </Box>)
-        }
-    </Box> 
+            <Link exact={true} to="/explore">
+              <Button
+                margin={{ top: "small" }}
+                plain
+                color="#FFF"
+                icon={<Gallery />}
+              />
+            </Link>
 
+            <Button plain color="#FFF" icon={<Edit />} onClick={props.click} />
+
+            <Button plain color="#FFF" icon={<UserSettings />} />
+            <div>
+              {state && (
+                <Link onClick={() => handleLogout()} to="/">
+                  <Button icon={<Logout />} plain color="#FFF"  margin={{ top: "small" }}/>
+                </Link>
+              )}
+            </div>
+          </Box>
+        </Nav>
+      )}
+    </Box>
   );
 };
 export default SideBarC;

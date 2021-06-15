@@ -13,7 +13,7 @@ const ProfileDashboard = () => {
 
     return(
         <Layout isSideBar={false}>
-            <Box direction='row-responsive'>
+            <Box direction='column'>
                 <SideBar  click={handleEdit} /> 
                 <PublicProfile editMode={editMode} />             
             </Box>
