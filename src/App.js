@@ -11,6 +11,7 @@ import Explore from './components/Explore'
 
 import PrivateRoute from './hooks/PrivateRoute'
 import PublicRoute from './hooks/PublicRoute'
+import UserSettings from './components/UserSettings';
 
 const theme = {
   global: {
@@ -72,6 +73,10 @@ const App = () => {
             path='/explore'
             component={Explore}/>      
 
+          <PrivateRoute 
+            exact={true} 
+            path='/settings'
+            component={UserSettings}/>  
           <Redirect to='/'/>          
         </Switch>
         

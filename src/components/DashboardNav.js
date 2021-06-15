@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Avatar, Nav, Button, Box, Anchor } from "grommet";
+import { Avatar, Nav, Button, Box } from "grommet";
 import {
   Apps,
   Edit,
@@ -73,9 +73,9 @@ const DashboardNav = (props) => {
             label="Edit mode"
             onClick={props.click}
           />
-
-          <Button plain color="#FFF" icon={<UserSettings />} label="Settings" />
-
+          <Link  to='/settings'>
+            <Button plain color="#FFF" icon={<UserSettings />} label="Settings" margin={{ top: "small" }}/>
+          </Link>
           <div>
             {state && (
               <Link onClick={() => handleLogout()} to="/">
@@ -102,7 +102,7 @@ const DashboardNav = (props) => {
             <Search icon={<FormSearch />} />
           </Box>
           <Box direction="row" justify="around">
-            <Link exact={true} to="/dashboard">
+            <Link  to="/dashboard">
               <Button
                 margin={{ top: "small" }}
                 plain
@@ -111,7 +111,7 @@ const DashboardNav = (props) => {
               />
             </Link>
 
-            <Link exact={true} to="/explore">
+            <Link to="/explore">
               <Button
                 margin={{ top: "small" }}
                 plain
@@ -122,7 +122,9 @@ const DashboardNav = (props) => {
 
             <Button plain color="#FFF" icon={<Edit />} onClick={props.click} />
 
-            <Button plain color="#FFF" icon={<UserSettings />} />
+            <Link to='/settings'>
+              <Button plain color="#FFF" icon={<UserSettings />} margin={{ top: "small" }}/>
+            </Link>
             <div>
               {state && (
                 <Link onClick={() => handleLogout()} to="/">
