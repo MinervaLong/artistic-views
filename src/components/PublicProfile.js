@@ -28,13 +28,10 @@ const PublicProfile = ({editMode}) => {
                     width="medium" 
                     background="light-1">
 
-                     {editMode ?   
-                    (<CardHeader pad="medium" alignSelf='center'><h1>Restaurant info</h1><Edit />
-                    </CardHeader>)
-                    :
-                    (<CardHeader pad="medium" alignSelf='center'><h1>Restaurant info</h1>
-                    </CardHeader>)
-                    }
+                    
+                    <CardHeader pad="medium" alignSelf='center'><h1>Restaurant info</h1>
+                    </CardHeader>
+                   
                     <CardBody pad="medium">
                     {editMode ?
                         (<Box direction="row"  gap="small" alignSelf='center' >
