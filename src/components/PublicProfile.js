@@ -94,9 +94,9 @@ const PublicProfile = ({editMode}) => {
                 round
             >
                 {editMode ?
-                (<Heading alignSelf='center' level='2'>Photo Gallery<Edit /></Heading>)
+                (<Heading alignSelf='center' level='2'>My Photos<Edit /></Heading>)
                 :
-                (<Heading alignSelf='center' level='2'>Photo Gallery</Heading>) 
+                (<Heading alignSelf='center' level='2'>My Photos</Heading>) 
                 }
                 <Box
                     as='section'
