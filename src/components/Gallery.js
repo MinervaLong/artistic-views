@@ -12,7 +12,7 @@ const Gallery = () => {
             
             alignSelf='center'
         >
-                    <Box height="small" width="small">
+                    <Box height="small" width="medium">
                         <Image
                             margin='0.5rem'
                             fit="cover"
@@ -20,7 +20,7 @@ const Gallery = () => {
                         />
                     </Box>
 
-                    <Box height="small" width="small">
+                    <Box height="small" width="medium">
                         <Image
                             margin='0.5rem'
                             fit="cover"
@@ -28,7 +28,7 @@ const Gallery = () => {
                         />
                     </Box>
 
-                    <Box height="small" width="small">
+                    <Box height="small" width="medium">
                         <Image
                             margin='0.5rem'
                             fit="cover"
@@ -36,7 +36,7 @@ const Gallery = () => {
                         />
                     </Box>
 
-                    <Box height="small" width="small">
+                    <Box height="small" width="medium">
                         <Image
                             margin='0.5rem'
                             fit="cover"
@@ -44,7 +44,7 @@ const Gallery = () => {
                         />
                     </Box>
 
-                    <Box height="small" width="small">
+                    <Box height="small" width="medium">
                         <Image
                             margin='0.5rem'
                             fit="cover"
@@ -52,7 +52,7 @@ const Gallery = () => {
                         />
                     </Box>
 
-                    <Box height="small" width="small">
+                    <Box height="small" width="medium">
                         <Image
                             margin='0.5rem'
                             fit="cover"
@@ -60,7 +60,7 @@ const Gallery = () => {
                         />
                     </Box>
 
-                    <Box height="small" width="small">
+                    <Box height="small" width="medium">
                         <Image
                             margin='0.5rem'
                             fit="cover"
@@ -68,7 +68,7 @@ const Gallery = () => {
                         />
                     </Box>
 
-                    <Box height="small" width="small">
+                    <Box height="small" width="medium">
                         <Image
                             margin='0.5rem'
                             fit="cover"
