@@ -59,7 +59,7 @@ const SideBarC = (props) => {
                 <Link exact to='/explore'>
                     <Button
                         icon={<Gallery />}
-                        label="Explore"
+                        label="Find Artist"
                         style={{ border: "none" }}
                     />
                 </Link>
@@ -82,7 +82,7 @@ const SideBarC = (props) => {
             </Box> 
         ):(        
             <Box>
-                <Nav direction="column" justify='around' alignContent='center' background="secondMan" pad="medium">
+                <Nav direction="column" justify='around' alignContent='center' background="secondArt" pad="medium">
                     <Box direction="row" justify='center'>
                         <Anchor icon={<FormSearch />} lab />
                     </Box>
