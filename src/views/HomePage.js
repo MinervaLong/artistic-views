@@ -4,8 +4,8 @@ import About from '../components/About'
 import HowItWorks from '../components/HowItWorks'
 
 import {Box} from 'grommet'
-import NavBar from './NavBar'
-import Footer from './Footer'
+import NavBar from '../components/NavBar'
+import Footer from '../components/Footer'
 
 const HomePage = () => {
     return(    

@@ -3,7 +3,7 @@ import {Switch, Redirect} from 'react-router-dom'
 import {UserContext} from './hooks/UserContext'
 import { Grommet } from 'grommet';
 
-import HomePage from './components/HomePage'
+import HomePage from './views/HomePage'
 import SignIn from './components/SignIn'
 import SignUp from './components/SignUp'
 import ProfileDashboard from './views/ProfileDashboard'
