@@ -14,7 +14,7 @@ A couple of years ago I took draw lessons and we did some exhibitions in our edu
 
 ## Status
 
-Building the layout of the different views of the website. The updated code is in develop branch. The next objective will be learn and apply user authentication. 
+Change Grommet library to styled-components. 
 
 ## Tech/Framework used
 Built with:
