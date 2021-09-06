@@ -14,12 +14,12 @@ A couple of years ago I took draw lessons and we did some exhibitions in our edu
 
 ## Status
 
-Change Grommet library to styled-components. 
+Lerning how to implement an authentication system. 
 
 ## Tech/Framework used
 Built with:
 * [React](https://reactjs.org/)
-* [Grommet](https://v2.grommet.io/)
+* [styled-components](https://styled-components.com/docs/)
 * [Dummyapi.io](https://dummyapi.io/) 
 
 ## Installation
@@ -36,7 +36,7 @@ Dependencies included:
 * [react-hook-forms](https://react-hook-form.com/)
 * [Axios](https://www.npmjs.com/package/axios)
 * [Yup](https://www.npmjs.com/package/yup#mixeddefaultvalue-any-schema) 
-* [Grommet-icons](https://icons.grommet.io/?)
+
 
 ## Credits
 
