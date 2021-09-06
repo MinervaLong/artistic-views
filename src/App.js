@@ -1,82 +1,27 @@
-import React, { useState, useMemo } from 'react'
-import {Switch, Redirect} from 'react-router-dom'
-import {UserContext} from './hooks/UserContext'
-import { Grommet } from 'grommet';
+import {Switch, Redirect,Route} from 'react-router-dom'
 
-import HomePage from './components/HomePage'
-import SignIn from './components/SignIn'
-import SignUp from './components/SignUp'
-import ProfileDashboard from './views/ProfileDashboard'
-import Explore from './components/Explore'
-
-import PrivateRoute from './hooks/PrivateRoute'
-import PublicRoute from './hooks/PublicRoute'
-
-const theme = {
-  global: {
-    colors: {
-      primary:'#FFC100',
-      background:'#E1E6E2',
-      secondArt:'#722D78',
-      secondMan:'#215732'
-    },
-    font: {
-      family: 'Karla',      
-      size: '18px',
-    },
-    focus: {
-      border: {
-        color:'none'
-      }
-    },
-    
-  },
-  tab: {
-    active: {
-      color:'#215732'
-    }
-  },
-  button:{
-    active: {
-      borderColor:'none'
-  }
- } 
-};
+import Home from './views/Home/Home'
+import SignIn from './views/SignIn/SignIn'
+import SignUp from './views/SignUp/SignUp'
+import NavBar from './components/composed/NavBar/NavBar'
+import Footer from './components/composed/Footer/Footer'
 
 const App = () => {
-  const [user, setUser] = useState(null);
 
-  const value = useMemo(() => ({ user, setUser }), [user, setUser]);
   
    return (
-     <UserContext.Provider value={value}>
-      <Grommet theme={theme} full>
-               
+      <> 
+         <NavBar />
+                
         <Switch> 
-          <PublicRoute  exact path='/' component={HomePage} />         
-          <PublicRoute restricted={true} 
-            path='/sign-in'
-            component={SignIn} />
-
-          <PublicRoute
-            path='/sign-up'
-            component={SignUp}/>  
-
-          <PrivateRoute 
-            exact={true} 
-            path='/dashboard'
-            component={ProfileDashboard}/>
-
-          <PrivateRoute 
-            exact={true} 
-            path='/explore'
-            component={Explore}/>      
+          <Route  exact={true} path='/' component={Home} />         
+          <Route restricted={true} path='/sign-in' component={SignIn} />
+          <Route path='/sign-up' component={SignUp}/>  
 
           <Redirect to='/'/>          
         </Switch>
-        
-      </Grommet> 
-      </UserContext.Provider> 
+        <Footer />  
+   </>
   );
 
 }
