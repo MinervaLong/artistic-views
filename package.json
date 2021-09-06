@@ -1,22 +1,22 @@
 {
-  "name": "sprint9",
+  "name": "artistic-views",
   "version": "0.1.0",
+  "description": "Personal project to promote artists work",
   "private": true,
+  "author": "Vanesa Perea",
+  "license": "MIT",
   "dependencies": {
     "@hookform/resolvers": "^2.5.2",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
-    "grommet": "^2.17.2",
-    "grommet-icons": "^4.5.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.8.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "styled-components": "^5.3.0",
-    "web-vitals": "^1.0.1",
     "yup": "^0.32.9"
   },
   "scripts": {
@@ -42,5 +42,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "parcel-bundler": "^1.12.5"
   }
 }
