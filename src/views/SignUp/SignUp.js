@@ -1,11 +1,12 @@
 import React, {useState} from 'react' 
+import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
-import {Form, Image, Heading, FormField, TextInput, CheckBox, Box, Button, Text} from 'grommet'
-import signUpImg from '../assets/signUpImg.svg'
-import { Link } from 'react-router-dom'
-import  NavLayout  from './NavLayout'
+
+import {SignUpImg} from '../../assets/images'
+
+
 
 // Yup Schema to validate fields
 const SignUpSchema = yup.object().shape({
@@ -36,75 +37,51 @@ const SignUp = () => {
     }
 
     return(
-        <NavLayout isNav={true}>
-          <Box
-            as='main'
-            direction='row'
-            wrap='reverse'
-            justify='center'
-            alignContent='center'
-            style={{alignItems:'center', padding:'7rem 0 7rem 0'}} 
-            overflow='hidden'           
-          >
-              <Box
-                size='medium'
-                direction='column'
-                justify='center'
-                alignContent='center'
-                pad='small'
-                animation='slideDown'
-                border='all'
-                elevation='medium'
-                responsive={true}
-                overflow='hidden'
-                style={{alignItems:'center'}}
-                round
-              >
-                                
-                <Heading level='2'>Create an Account</Heading>
-                <Form onSubmit={handleSubmit(signUpSubmit)}>
-                    <FormField label="Complete Name">
-                        <TextInput 
+          <div>
+            <div>
+                <h2 level='2'>Create an Account</h2>
+                <form onSubmit={handleSubmit(signUpSubmit)}>
+                    <label label="Complete Name">
+                        <input 
                         type='text'
                         name='completeName'
                         placeholder='Type your complete name...'
                         {...register('completeName')} 
                         />
-                    </FormField>            
-                    <Text color='status-critical' size='small'>{errors.completeName?.message}</Text>
+                    </label>            
+                    <p color='status-critical'>{errors.completeName?.message}</p>
 
-                    <FormField label="Email">
-                        <TextInput
+                    <label label="Email">
+                        <input
                             type='email'
                             name='email'
                             placeholder='Type here your email...'
                             {...register('email')}  
                          />
-                    </FormField>
-                    <Text color='status-critical' size='small'>{errors.email?.message}</Text>
+                    </label>
+                    <p color='status-critical'>{errors.email?.message}</p>
 
-                    <FormField label="Password">
-                        <TextInput
+                    <label label="Password">
+                        <input
                             type='password'
                             name='password'
                             placeholder='Password...'
                             {...register('password')}  
                         />
-                    </FormField>
-                    <Text color='status-critical' size='small'>{errors.password?.message}</Text>
+                    </label>
+                    <p color='status-critical'>{errors.password?.message}</p>
                     
-                    <FormField label="Confirm Password">
-                        <TextInput
+                    <label label="Confirm Password">
+                        <input
                             type='password'
                             name='confirmPassword'
                             placeholder='Confirm Password...'
                             {...register('confirmPassword')}   
                         />
-                    </FormField>
-                    <Text color='status-critical' size='small'>{errors.confirmPassword?.message}</Text>
+                    </label>
+                    <p color='status-critical'>{errors.confirmPassword?.message}</p>
 
-                    <CheckBox
-                        pad='medium'
+                    <input
                         id='policy'
                         name='policy'
                         type='checkbox'
@@ -113,20 +90,19 @@ const SignUp = () => {
                         {...register("checked")}
                         onChange={(event) => setChecked(event.target.checked)}                      
                     />
-                   <Text color='status-critical' size='small'>{errors.checked && 'The Privacy Policy must be accepted'}</Text>
+                   <p color='status-critical'>{errors.checked && 'The Privacy Policy must be accepted'}</p>
                     
-                    <Box direction="row" justify='evenly' margin='small'>
+                    <div>
                         <Link to='/dashboard'>
-                            <Button type="submit" id='submit' color='primary' label="Sign-Up" />
+                            <button type="submit" id='submit'>Sign-Up</button>
                         </Link>
                         
-                        <Button type="reset" label="Reset" />
-                    </Box>
-                </Form>
-            </Box>
-            <Box width='35rem' ><Image fit='contain' src={signUpImg}></Image></Box> 
-        </Box>
-    </NavLayout>
+                        <button type="reset">Reset</button>
+                    </div>
+                </form>
+            </div>
+            <div width='35rem' ><img alt='' src={SignUpImg}></img></div> 
+        </div>
     )
 }
 
