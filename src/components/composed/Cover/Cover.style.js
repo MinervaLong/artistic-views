@@ -31,4 +31,10 @@ export const CoverWrapper = styled.div`
         }
 	
     }
+
+    @media screen and (max-width: 400px) {
+        .overlay {
+            width: 55%;
+        }
+    }
 `
