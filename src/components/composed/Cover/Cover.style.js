@@ -19,7 +19,7 @@ export const CoverWrapper = styled.div`
     
 
     .overlay {
-        width: 35%;
+        width: 30%;
 	    height: 100%;
 	    padding: 50px;
 	    
