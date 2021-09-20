@@ -1,11 +1,17 @@
+/* eslint-disable jsx-a11y/alt-text */
 
 import {CoverImg} from '../../../assets/images'
-
+import { CoverWrapper } from './Cover.style';
 
 const Cover = () => {
     return(
-        // eslint-disable-next-line jsx-a11y/alt-text
-        <div><img width='500px'src={CoverImg} a1t='Logo and slogan' /> </div> 
+      
+        <CoverWrapper>
+            <div className='overlay'>
+                <img a1t='Logo and slogan' src={CoverImg}  />
+                <p>Eating with Art</p>
+            </div>
+        </CoverWrapper> 
     )}
 
 export default Cover;
